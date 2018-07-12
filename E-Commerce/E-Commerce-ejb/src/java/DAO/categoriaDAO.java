@@ -31,10 +31,44 @@ public class categoriaDAO {
         try {
             PreparedStatement p = con.prepareStatement(SQL);
             p.setString(1, ca.getTipo());
+            
+            p.execute();
         } catch (SQLException ex) {
             Logger.getLogger(categoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void upd (categoria ca) {
+        String SQL = "UPDATE CATEGORIA SET TIPO=? WHERE ID_CATEGORIA=?";
+        
+        try {
+            PreparedStatement p = con.prepareStatement(SQL);
+            p.setString(1, ca.getTipo());
+            p.setInt(2, ca.getId_categoria());
+            
+            p.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(categoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void delete(categoria ca){
+        String SQL = "DELETE FROM CATEGORIA WHERE ID_CATEGORIA=?";
+        try {
+            PreparedStatement p = con.prepareStatement(SQL);
+            p.setInt(1, ca.getId_categoria());
+            
+            p.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(categoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public categoria findById(int id){
+        return new categoria();
+    }
+    
+    
     
     
 }
