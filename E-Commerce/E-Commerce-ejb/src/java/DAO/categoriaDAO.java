@@ -8,6 +8,8 @@ package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.categoria;
@@ -68,7 +70,10 @@ public class categoriaDAO {
         return new categoria();
     }
     
-    
-    
-    
+    public List<categoria> findAll() throws Exception {
+        List<categoria> list = new ArrayList<>();
+
+        return list;
+    }
+   
 }
