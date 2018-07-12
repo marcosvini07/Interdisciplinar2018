@@ -72,7 +72,7 @@ public class categoriaDAO {
     
     public List<categoria> findAll() throws Exception {
         List<categoria> list = new ArrayList<>();
-
+        
         return list;
     }
    
