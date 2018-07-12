@@ -1,6 +1,5 @@
 package model;
 
-
 public class Pedido {
     private int id_pedido;
     private Produto id_produto;
