@@ -26,3 +26,10 @@ hs_err_pid*
 /E-Commerce/E-Commerce-ejb/nbproject/private/
 /E-Commerce-shared/nbproject/private/
 /JavaLibrary3/nbproject/private/
+/index/nbproject/private/
+/E-Commerce-shared/build/
+/E-Commerce-shared/dist/
+/E-Commerce/build/
+/E-Commerce/E-Commerce-war/build/
+/E-Commerce/E-Commerce-ejb/dist/
+/E-Commerce-web/nbproject/private/

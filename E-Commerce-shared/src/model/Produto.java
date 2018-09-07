@@ -1,6 +1,5 @@
 package model;
 
-
 public class Produto {
     private int id_produto;
     private String descricao;
@@ -8,7 +7,7 @@ public class Produto {
     private String marca;
     private String cor;
     private double valor;
-    private categoria id_categoria;
+    private CategoriaDTO id_categoria;
 
     public int getId_produto() {
         return id_produto;
@@ -58,11 +57,11 @@ public class Produto {
         this.valor = valor;
     }
 
-    public categoria getId_categoria() {
+    public CategoriaDTO getId_categoria() {
         return id_categoria;
     }
 
-    public void setId_categoria(categoria id_categoria) {
+    public void setId_categoria(CategoriaDTO id_categoria) {
         this.id_categoria = id_categoria;
     }
 }

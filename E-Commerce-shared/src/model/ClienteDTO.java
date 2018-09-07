@@ -1,6 +1,9 @@
 package model;
 
-public class Cliente {
+import java.io.Serializable;
+
+
+public class ClienteDTO implements Serializable {
     private int id_cliente;
     private String nome;
     private String sobrenome;

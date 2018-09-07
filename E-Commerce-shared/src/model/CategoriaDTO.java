@@ -1,10 +1,21 @@
 package model;
 
+import java.io.Serializable;
 
-public class categoria {
+
+public class CategoriaDTO implements Serializable{
     private int id_categoria;
     private String marca;
     private String tipo;
+    private String cor;
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
 
     public int getId_categoria() {
         return id_categoria;

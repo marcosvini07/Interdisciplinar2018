@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.categoria;
+import model.CategoriaDTO;
 import util.ConnectionUtil;
 
 
@@ -20,27 +20,29 @@ import util.ConnectionUtil;
  *
  * @author vini1
  */
-public class categoriaDAO {
+public class CategoriaDAO {
     Connection con;
     
-    public categoriaDAO() throws Exception {
+    public CategoriaDAO() throws Exception {
         con = ConnectionUtil.getConnection();
     } 
     
-    public void salvaCat (categoria ca) {
-        String SQL = "INSERT INTO CATRGORIA VALUES (?, ?)";
+    public void save (CategoriaDTO ca) {
+        String SQL = "INSERT INTO CATEGORIA (MARCA, COR, TIPO) VALUES (?, ?, ?)";
     
         try {
             PreparedStatement p = con.prepareStatement(SQL);
-            p.setString(1, ca.getTipo());
+            p.setString(1, ca.getMarca());
+            p.setString(2, ca.getCor());
+            p.setString(3, ca.getTipo());
             
             p.execute();
         } catch (SQLException ex) {
-            Logger.getLogger(categoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void upd (categoria ca) {
+    public void update (CategoriaDTO ca) {
         String SQL = "UPDATE CATEGORIA SET TIPO=? WHERE ID_CATEGORIA=?";
         
         try {
@@ -50,11 +52,11 @@ public class categoriaDAO {
             
             p.execute();
         } catch (SQLException ex) {
-            Logger.getLogger(categoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void delete(categoria ca){
+    public void delete(CategoriaDTO ca){
         String SQL = "DELETE FROM CATEGORIA WHERE ID_CATEGORIA=?";
         try {
             PreparedStatement p = con.prepareStatement(SQL);
@@ -62,16 +64,16 @@ public class categoriaDAO {
             
             p.execute();
         } catch (SQLException ex) {
-            Logger.getLogger(categoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public categoria findById(int id){
-        return new categoria();
+    public CategoriaDTO findById(int id){
+        return new CategoriaDTO();
     }
     
-    public List<categoria> findAll() throws Exception {
-        List<categoria> list = new ArrayList<>();
+    public List<CategoriaDTO> findAll() throws Exception {
+        List<CategoriaDTO> list = new ArrayList<>();
         
         return list;
     }

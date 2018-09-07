@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Pedido;
+import model.PedidoDTO;
 import util.ConnectionUtil;
 
 public class pedidoDAO {
@@ -17,7 +17,7 @@ public class pedidoDAO {
         con = ConnectionUtil.getConnection();
     } 
    
-   public void salvaPed (Pedido ped) {
+   public void salvaPed (PedidoDTO ped) {
         String SQL = "INSERT INTO PEDIDO VALUES (?, ?)";
     
         try {
@@ -33,7 +33,7 @@ public class pedidoDAO {
         }
         
     }        
-   public void upd (Pedido ped) {
+   public void upd (PedidoDTO ped) {
         String SQL = "UPDATE CATEGORIA SET TIPO=? WHERE ID_PEDIDO=?";   
         
         try {
@@ -50,7 +50,7 @@ public class pedidoDAO {
         }
        
    }
-    public void delete (Pedido ped) {
+    public void delete (PedidoDTO ped) {
         String SQL = "DELETE FROM PEDIDO WHERE ID_PEDIDO=?";  
         try {
             PreparedStatement p = con.prepareStatement(SQL);
@@ -62,12 +62,12 @@ public class pedidoDAO {
         }
         
         }
-    public Pedido findById(int id){
-        return new Pedido();
+    public PedidoDTO findById(int id){
+        return new PedidoDTO();
     }
     
-    public List<Pedido> findAll() throws Exception {
-        List<Pedido> list = new ArrayList<>();
+    public List<PedidoDTO> findAll() throws Exception {
+        List<PedidoDTO> list = new ArrayList<>();
         
         return list;
     }

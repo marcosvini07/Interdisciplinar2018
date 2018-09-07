@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Cliente;
+import model.ClienteDTO;
 import util.ConnectionUtil;
 
 /**
@@ -26,7 +26,7 @@ public class clienteDAO {
         con = ConnectionUtil.getConnection();
     }
     
-    public void salvaCli(Cliente cli) {
+    public void salvaCli(ClienteDTO cli) {
         String SQL = "INSERT INTO CLIENTE (NOME, SOBRENOME, CPF, EMAIL) VALUES (?, ?, ?, ?)";
         
         try {
@@ -42,7 +42,7 @@ public class clienteDAO {
         }
     }
     
-    public void upd (Cliente cli) {
+    public void upd (ClienteDTO cli) {
      String SQL="UPDATE CLIENTE SET NOME=?, SOBRENOME=?, CPF=?, EMAIL=? WHERE ID_CLIENTE=?";
         try {
             PreparedStatement p = con.prepareStatement(SQL);
@@ -59,7 +59,7 @@ public class clienteDAO {
     
     }
     
-    public void delet(Cliente cli) {
+    public void delet(ClienteDTO cli) {
      String SQL = "DELETE FROM CLIENTE WHERE ID_CLIENTE=?"; 
         try {
             PreparedStatement p = con.prepareStatement(SQL);
@@ -71,12 +71,12 @@ public class clienteDAO {
         }
     } 
     
-     public Cliente findById(int id) {
-       return new Cliente();
+     public ClienteDTO findById(int id) {
+       return new ClienteDTO();
         
       }
-      public List<Cliente> findAll() throws Exception {
-        List<Cliente> list = new ArrayList<>();
+      public List<ClienteDTO> findAll() throws Exception {
+        List<ClienteDTO> list = new ArrayList<>();
         
         return list;
     }

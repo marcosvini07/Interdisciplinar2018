@@ -1,9 +1,11 @@
 package model;
 
-public class Pedido {
+import java.io.Serializable;
+
+public class PedidoDTO implements Serializable{
     private int id_pedido;
     private Produto id_produto;
-    private Cliente id_cliente;
+    private ClienteDTO id_cliente;
 
     public int getId_pedido() {
         return id_pedido;
@@ -21,11 +23,11 @@ public class Pedido {
         this.id_produto = id_produto;
     }
 
-    public Cliente getId_cliente() {
+    public ClienteDTO getId_cliente() {
         return id_cliente;
     }
 
-    public void setId_cliente(Cliente id_cliente) {
+    public void setId_cliente(ClienteDTO id_cliente) {
         this.id_cliente = id_cliente;
     }
 }
