@@ -5,14 +5,13 @@
  */
 package beans;
 
-import javax.ejb.Remote;
-import model.CategoriaDTO;
+import javax.ejb.Local;
 
 /**
  *
  * @author vini1
  */
-@Remote
-public interface BeanCadastroCategoriaRemote {
-    public boolean cadastroCategoria(CategoriaDTO cat);
+@Local
+public interface BeanCadastroCategoriaLocal {
+    
 }

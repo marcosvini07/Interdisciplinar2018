@@ -9,7 +9,6 @@ import DAO.CategoriaDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
-import javax.ejb.LocalBean;
 import model.CategoriaDTO;
 
 /**
@@ -17,8 +16,7 @@ import model.CategoriaDTO;
  * @author vini1
  */
 @Stateless
-@LocalBean
-public class BeanCadastroCategoria implements BeanCadastroCategoriaRemote {
+public class BeanCadastroCategoria implements BeanCadastroCategoriaLocal, BeanCadastroCategoriaRemote {
     public boolean cadastroCategoria(CategoriaDTO cat) {
         
         try {

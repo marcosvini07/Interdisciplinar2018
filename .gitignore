@@ -33,3 +33,7 @@ hs_err_pid*
 /E-Commerce/E-Commerce-war/build/
 /E-Commerce/E-Commerce-ejb/dist/
 /E-Commerce-web/nbproject/private/
+/E-Commerce-web/build/
+/E-Commerce-web/dist/
+/E-Commerce/E-Commerce-war/dist/
+/E-Commerce/dist/
