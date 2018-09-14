@@ -19,14 +19,14 @@ import util.ConnectionUtil;
  *
  * @author vini1
  */
-public class clienteDAO {
+public class ClienteDAO {
     Connection con;
     
-    public clienteDAO() throws Exception {
+    public ClienteDAO() throws Exception {
         con = ConnectionUtil.getConnection();
     }
     
-    public void salvaCli(ClienteDTO cli) {
+    public void save(ClienteDTO cli) {
         String SQL = "INSERT INTO CLIENTE (NOME, SOBRENOME, CPF, EMAIL) VALUES (?, ?, ?, ?)";
         
         try {
@@ -38,11 +38,11 @@ public class clienteDAO {
             
             p.execute();
         } catch (SQLException ex) {
-            Logger.getLogger(clienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void upd (ClienteDTO cli) {
+    public void update (ClienteDTO cli) {
      String SQL="UPDATE CLIENTE SET NOME=?, SOBRENOME=?, CPF=?, EMAIL=? WHERE ID_CLIENTE=?";
         try {
             PreparedStatement p = con.prepareStatement(SQL);
@@ -54,7 +54,7 @@ public class clienteDAO {
             
             p.execute();
         } catch (SQLException ex) {
-            Logger.getLogger(clienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }
@@ -67,7 +67,7 @@ public class clienteDAO {
             
             p.execute();
         } catch (SQLException ex) {
-            Logger.getLogger(clienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
     

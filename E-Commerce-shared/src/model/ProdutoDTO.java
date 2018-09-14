@@ -1,6 +1,6 @@
 package model;
 
-public class Produto {
+public class ProdutoDTO {
     private int id_produto;
     private String descricao;
     private String tipo;

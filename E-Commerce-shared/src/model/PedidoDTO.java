@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class PedidoDTO implements Serializable{
     private int id_pedido;
-    private Produto id_produto;
+    private ProdutoDTO id_produto;
     private ClienteDTO id_cliente;
 
     public int getId_pedido() {
@@ -15,11 +15,11 @@ public class PedidoDTO implements Serializable{
         this.id_pedido = id_pedido;
     }
 
-    public Produto getId_produto() {
+    public ProdutoDTO getId_produto() {
         return id_produto;
     }
 
-    public void setId_produto(Produto id_produto) {
+    public void setId_produto(ProdutoDTO id_produto) {
         this.id_produto = id_produto;
     }
 

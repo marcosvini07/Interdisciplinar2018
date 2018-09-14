@@ -3,7 +3,7 @@ package model;
 
 public class Pesquisa {
     private int id_pesquisa;
-    private Produto id_produto;
+    private ProdutoDTO id_produto;
 
     public int getId_pesquisa() {
         return id_pesquisa;
@@ -13,11 +13,11 @@ public class Pesquisa {
         this.id_pesquisa = id_pesquisa;
     }
 
-    public Produto getId_produto() {
+    public ProdutoDTO getId_produto() {
         return id_produto;
     }
 
-    public void setId_produto(Produto id_produto) {
+    public void setId_produto(ProdutoDTO id_produto) {
         this.id_produto = id_produto;
     }
 }
